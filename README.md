@@ -22,4 +22,4 @@ I don't just write PRDs; I understand the vector databases, RAG pipelines, and A
 #### 2. [Phool AI: The Empathic Garden OS](./Phool-AI-PRD.md)
 * **Status:** Strategic Roadmap / In Development
 * **The Pitch:** A multimodal AI platform that turns "Plant Care" into "Plant Connection." Leverages real-time RAG (syncing with local weather APIs) and computer vision to provide proactive plant care, while automating growth-timelapse Reels for the creator economy. 
-* **Tech Stack Insight:** Vector Databases (Pinecone), RAG, Multimodal LLMs (GPT-4V/Gemini), Audio Generation APIs.
+* **Tech Stack Insight:** Vector Databases (Pinecone), RAG, Multimodal LLMs (GPT-4V/Gemini), Audio Generation APIs. 
