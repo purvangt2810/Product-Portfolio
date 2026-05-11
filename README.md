@@ -1,5 +1,5 @@
 # Purvang D. Thakore | AI Product Portfolio
-**Senior Data Engineer $\rightarrow$ AI Product Manager**
+**Senior Data Engineer -> AI Product Manager**
 
 I bridge the gap between complex backend data architectures and zero-to-one consumer products. My background in orchestrating massive data pipelines ensures that the products I build are not just beautifully designed, but technically feasible, scalable, and rooted in high-fidelity machine learning. 
 
