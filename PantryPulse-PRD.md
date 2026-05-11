@@ -1,5 +1,5 @@
 # 🍳 PantryPulse: The Zero-Spend Digital Pantry
-**Live Prototype:** [https://pantry-pulse-magic.lovable.app/] 🔗  
+**Live Prototype:** https://pantry-pulse-magic.lovable.app/ 🔗  
 **My Role:** Product Lead & Technical Founder 👨🏽‍💻
 
 ### 💡 Section 1: The Pitch
