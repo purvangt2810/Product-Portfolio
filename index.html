@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purvang Thakore | AI Product Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #94a3b8; font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { color: #e2e8f0; }
+        .text-teal { color: #5eead4; }
+        .hover-card:hover { background-color: rgba(30, 41, 59, 0.5); box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1); }
+        .group:hover .group-hover\:text-teal { color: #5eead4; }
+        /* Spotlight Effect */
+        #spotlight {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 30;
+            background: radial-gradient(600px circle at var(--x) var(--y), rgba(29, 78, 216, 0.15), transparent 80%);
+        }
+        /* Archive Modal */
+        #archive-modal { display: none; }
+        #archive-modal.active { display: block; }
+        #main-content.hidden { display: none; }
+    </style>
+</head>
+<body class="antialiased leading-relaxed selection:bg-teal-300 selection:text-teal-900">
+    <div id="spotlight"></div>
+    
+    <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+        <div id="main-content" class="lg:flex lg:justify-between lg:gap-4">
+            
+            <!-- LEFT SIDEBAR -->
+            <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+                <div>
+                    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Purvang Thakore</h1>
+                    <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">AI Product Specialist & Senior Data Engineer</h2>
+                    <p class="mt-4 max-w-xs leading-normal">Bridging hardcore AI engineering with Agile product delivery to build scalable, intelligent systems.</p>
+                    
+                    <nav class="nav hidden lg:block mt-16">
+                        <ul class="w-max">
+                            <li><a href="#about" class="group flex items-center py-3 active"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">About</span></a></li>
+                            <li><a href="#experience" class="group flex items-center py-3"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Experience</span></a></li>
+                            <li><a href="#projects" class="group flex items-center py-3"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Projects</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <ul class="ml-1 mt-8 flex items-center text-sm">
+                    <li class="mr-5"><a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="hover:text-slate-200">LinkedIn</a></li>
+                    <li class="mr-5"><a href="#" target="_blank" class="hover:text-slate-200">Resume</a></li>
+                </ul>
+            </header>
+
+            <!-- RIGHT CONTENT -->
+            <main class="pt-24 lg:w-1/2 lg:py-24">
+                
+                <!-- ABOUT -->
+                <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <p class="mb-4">I am a deeply technical engineer transitioning into the AI Product Management (AIPM) space. With a foundation built on architecting data pipelines and serving as a Technical Product Lead, I specialize in translating complex machine learning requirements into scalable, market-defining products.</p>
+                    <p class="mb-4">At <a href="https://www.visa.com/en-us" target="_blank" class="font-medium text-slate-200 hover:text-teal focus-visible:text-teal">Visa</a>, I managed technical delivery using strict 2-week Scrum sprints to architect AI fraud pipelines processing over <strong>3 Billion+ real-time transactions</strong>. Beyond building products, I build communities—serving as Chief Events Officer to facilitate tech-sharing meetups for engineering teams, and directing 500-person cross-functional tech fests.</p>
+                    <p>I am actively seeking PM and AIPM opportunities where I can leverage my Certified Scrum Product Owner (CSPO) credential and hardcore data-engineering lens to drive 0-to-1 product strategy.</p>
+                </section>
+
+                <!-- EXPERIENCE -->
+                <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <ol class="group/list">
+                        <!-- Visa -->
+                        <li class="mb-12">
+                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
+                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2022 — Present</header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug text-slate-200 group-hover:text-teal">Senior Data Engineer / Technical Product Lead · Visa Inc.</h3>
+                                    <p class="mt-2 text-sm leading-normal">Led 0-to-1 Product Strategy for the Latin America rollout of Visa Protect for A2A payments. Translated complex ML requirements into a scalable fraud pipeline processing 3 Billion+ real-time transactions. Organized monthly tech-sharing meetups for 25+ engineers as Chief Events Officer utilizing 2-week Scrum sprints.</p>
+                                    <ul class="mt-2 flex flex-wrap"><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Agile/Scrum</div></li><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Data Pipelines</div></li></ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- BISAG -->
+                        <li class="mb-12">
+                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
+                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2019</header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug text-slate-200 group-hover:text-teal"><a href="https://bisag-n.gov.in/" target="_blank">Data Science Research Intern · BISAG</a></h3>
+                                    <p class="mt-2 text-sm leading-normal">Developed a 0-to-1 prototype for a Self-Driving Car. Implemented Object Classification and Edge Detection using Arduino and Raspberry Pi.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- PROJECTS -->
+                <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <ul class="group/list">
+                        <!-- Phool AI -->
+                        <li class="mb-12">
+                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
+                                <div class="sm:col-span-2 opacity-70">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                </div>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" target="_blank" class="font-medium leading-snug text-slate-200 group-hover:text-teal">Phool AI (Empathic Garden OS)</a></h3>
+                                    <p class="mt-2 text-sm leading-normal">Architected a weather-synced data pipeline leveraging RAG to deliver hyper-local botanical care. Defined roadmap integrating real-time utility with gamified retention loops.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Pantry Pulse -->
+                        <li class="mb-12">
+                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
+                                <div class="sm:col-span-2 opacity-70">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" /></svg>
+                                </div>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" target="_blank" class="font-medium leading-snug text-slate-200 group-hover:text-teal">Pantry Pulse (Zero-Spend Inventory)</a></h3>
+                                    <p class="mt-2 text-sm leading-normal">Spearheaded the 0-to-1 vision for an AI inventory app to solve 'Kitchen Paralysis'. Validated technical requirements for a Computer Vision and NLTK-driven ingestion pipeline.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-12"><button onclick="document.getElementById('archive-modal').classList.add('active'); document.getElementById('main-content').classList.add('hidden'); window.scrollTo(0,0);" class="inline-flex items-center font-semibold leading-tight text-slate-200 group">View Full Project Archive <span class="ml-1 transition-transform group-hover:translate-x-2">→</span></button></div>
+                </section>
+
+                <!-- BEYOND WORK & PUBLICATIONS -->
+                <section class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-6">Publications</h2>
+                    <ul class="text-sm text-slate-400 mb-12">
+                        <li class="mb-2"><strong class="text-slate-200">Arduino based Automatic Irrigation System using GSM (2018)</strong><br> IJRECE VOL. 6 ISSUE 4 | ISSN: 2393-9028 (PRINT) | ISSN: 2348-2281 (ONLINE)</li>
+                    </ul>
+
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-6">Media & Communities</h2>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <h3 class="text-slate-200 font-semibold mb-2">Organizations</h3>
+                            <ul class="text-slate-400 space-y-1">
+                                <li>Scrum Alliance</li><li>Agile Austin</li><li>ProductCampATX</li><li>Agile Alliance</li><li>Product School</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-slate-200 font-semibold mb-2">Podcasts</h3>
+                            <ul class="text-slate-400 space-y-1">
+                                <li><a href="https://www.youtube.com/c/LennyPodcast" target="_blank" class="hover:text-teal">Lenny's Podcast</a></li>
+                                <li><a href="https://www.youtube.com/c/lexfridman" target="_blank" class="hover:text-teal">Lex Fridman</a></li>
+                                <li><a href="https://www.youtube.com/@MelissaPerri" target="_blank" class="hover:text-teal">Product Thinking</a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-slate-200 font-semibold mb-2">Books</h3>
+                            <ul class="text-slate-400 space-y-1">
+                                <li>Building AI-Powered Products</li>
+                                <li>The Lean Startup</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- PROJECT ARCHIVE MODAL -->
+        <div id="archive-modal" class="pt-24 lg:py-24 max-w-5xl mx-auto min-h-screen">
+            <button onclick="document.getElementById('archive-modal').classList.remove('active'); document.getElementById('main-content').classList.remove('hidden');" class="inline-flex items-center font-semibold leading-tight text-teal mb-8 group"><span class="mr-2 transition-transform group-hover:-translate-x-2">←</span> Purvang Thakore</button>
+            <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl mb-12">All Projects</h1>
+            <table class="w-full text-left border-collapse text-sm">
+                <thead class="sticky top-0 z-10 border-b border-slate-700/50 bg-slate-900/75 px-6 py-5 backdrop-blur">
+                    <tr><th class="py-4 pr-8 font-semibold text-slate-200">Year</th><th class="py-4 pr-8 font-semibold text-slate-200">Project</th><th class="py-4 pr-8 font-semibold text-slate-200">Made at</th><th class="py-4 pr-8 font-semibold text-slate-200 hidden lg:table-cell">Built with</th></tr>
+                </thead>
+                <tbody class="align-top text-slate-400">
+                    <tr class="border-b border-slate-800"><td class="py-4 pr-4">2026</td><td class="py-4 pr-4 font-semibold text-slate-200"><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" target="_blank" class="hover:text-teal">Phool AI</a></td><td class="py-4 pr-4">Independent Project</td><td class="py-4 pr-4 hidden lg:table-cell">RAG, Vector DB, LLMs</td></tr>
+                    <tr class="border-b border-slate-800"><td class="py-4 pr-4">2026</td><td class="py-4 pr-4 font-semibold text-slate-200"><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" target="_blank" class="hover:text-teal">Pantry Pulse</a></td><td class="py-4 pr-4">Independent Project</td><td class="py-4 pr-4 hidden lg:table-cell">CV, NLTK, Python</td></tr>
+                    <tr class="border-b border-slate-800"><td class="py-4 pr-4">2021</td><td class="py-4 pr-4 font-semibold text-slate-200">Adult Income EDA</td><td class="py-4 pr-4">Kaggle</td><td class="py-4 pr-4 hidden lg:table-cell">Pandas, Scikit-Learn</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.body.onmousemove = e => { document.documentElement.style.setProperty('--x', e.clientX + 'px'); document.documentElement.style.setProperty('--y', e.clientY + 'px'); }
+    </script>
+</body>
+</html>
