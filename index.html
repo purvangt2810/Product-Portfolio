@@ -3,176 +3,666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purvang Thakore | AI Product Specialist</title>
+    <title>Purvang Thakore | AI Product Specialist & Data Engineer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background-color: #0f172a; color: #94a3b8; font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { color: #e2e8f0; }
-        .text-teal { color: #5eead4; }
-        .hover-card:hover { background-color: rgba(30, 41, 59, 0.5); box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1); }
-        .group:hover .group-hover\:text-teal { color: #5eead4; }
-        /* Spotlight Effect */
-        #spotlight {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none; z-index: 30;
-            background: radial-gradient(600px circle at var(--x) var(--y), rgba(29, 78, 216, 0.15), transparent 80%);
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        teal: { 300: '#5eead4', 400: '#2dd4bf' }
+                    }
+                }
+            }
         }
-        /* Archive Modal */
-        #archive-modal { display: none; }
-        #archive-modal.active { display: block; }
-        #main-content.hidden { display: none; }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #94a3b8;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+        
+        /* Interactive Spotlight Effect */
+        #spotlight {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(600px circle at 0px 0px, rgba(45, 212, 191, 0.08), transparent 80%);
+            z-index: 50;
+            transition: background 0.1s ease;
+        }
+
+        /* Custom Scrollbar for sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+
+        /* Active Nav Link Styling */
+        .nav-text { transition: all 0.2s ease-in-out; }
+        .nav-indicator { transition: all 0.2s ease-in-out; }
+        
+        .active-nav .nav-text { color: #f1f5f9; font-weight: 700; }
+        .active-nav .nav-indicator { width: 4rem; background-color: #f1f5f9; }
+
+        .group-hover\/nav:hover .nav-text { color: #f1f5f9; }
+        .group-hover\/nav:hover .nav-indicator { width: 4rem; background-color: #f1f5f9; }
+
+        /* View transitions */
+        .view-section {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .hidden-view {
+            display: none !important;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .visible-view {
+            display: flex !important;
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="antialiased leading-relaxed selection:bg-teal-300 selection:text-teal-900">
+<body class="relative selection:bg-teal-300/30 selection:text-teal-300">
+
     <div id="spotlight"></div>
-    
+
     <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div id="main-content" class="lg:flex lg:justify-between lg:gap-4">
+        
+        <div id="main-view" class="view-section visible-view lg:flex lg:justify-between lg:gap-4">
             
-            <!-- LEFT SIDEBAR -->
             <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
                 <div>
-                    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Purvang Thakore</h1>
-                    <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">AI Product Specialist & Senior Data Engineer</h2>
-                    <p class="mt-4 max-w-xs leading-normal">Bridging hardcore AI engineering with Agile product delivery to build scalable, intelligent systems.</p>
-                    
-                    <nav class="nav hidden lg:block mt-16">
+                    <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+                        <a href="/">Purvang Thakore</a>
+                    </h1>
+                    <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+                        AI Product Specialist & Senior Data Engineer
+                    </h2>
+                    <p class="mt-4 max-w-xs leading-normal">
+                        Translating complex ML architectures and 3Billion+ data pipelines into scalable, user-centric AI products. Active CSPO & Community Builder.
+                    </p>
+
+                    <!-- Navigation -->
+                    <nav class="nav hidden lg:block mt-16" aria-label="In-page jump links">
                         <ul class="w-max">
-                            <li><a href="#about" class="group flex items-center py-3 active"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">About</span></a></li>
-                            <li><a href="#experience" class="group flex items-center py-3"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Experience</span></a></li>
-                            <li><a href="#projects" class="group flex items-center py-3"><span class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200"></span><span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200">Projects</span></a></li>
+                            <li>
+                                <a class="group/nav flex items-center py-3 active-nav" href="#about">
+                                    <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover/nav:w-16 group-hover/nav:bg-slate-200 group-focus-visible/nav:w-16 group-focus-visible/nav:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover/nav:text-slate-200 group-focus-visible/nav:text-slate-200">About</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="group/nav flex items-center py-3" href="#experience">
+                                    <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover/nav:w-16 group-hover/nav:bg-slate-200 group-focus-visible/nav:w-16 group-focus-visible/nav:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover/nav:text-slate-200 group-focus-visible/nav:text-slate-200">Experience</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="group/nav flex items-center py-3" href="#projects">
+                                    <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover/nav:w-16 group-hover/nav:bg-slate-200 group-focus-visible/nav:w-16 group-focus-visible/nav:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover/nav:text-slate-200 group-focus-visible/nav:text-slate-200">Projects</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="group/nav flex items-center py-3" href="#certifications">
+                                    <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover/nav:w-16 group-hover/nav:bg-slate-200 group-focus-visible/nav:w-16 group-focus-visible/nav:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover/nav:text-slate-200 group-focus-visible/nav:text-slate-200">Certifications</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="group/nav flex items-center py-3" href="#beyond-work">
+                                    <span class="nav-indicator mr-4 h-px w-8 bg-slate-600 group-hover/nav:w-16 group-hover/nav:bg-slate-200 group-focus-visible/nav:w-16 group-focus-visible/nav:bg-slate-200 motion-reduce:transition-none"></span>
+                                    <span class="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover/nav:text-slate-200 group-focus-visible/nav:text-slate-200">Beyond Work</span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
-                
-                <ul class="ml-1 mt-8 flex items-center text-sm">
-                    <li class="mr-5"><a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="hover:text-slate-200">LinkedIn</a></li>
-                    <li class="mr-5"><a href="#" target="_blank" class="hover:text-slate-200">Resume</a></li>
+
+                <ul class="ml-1 mt-8 flex items-center gap-5 lg:mt-0" aria-label="Social media">
+                    <li class="shrink-0 text-xs">
+                        <a class="block hover:text-slate-200 transition" href="https://github.com/purvangt2810" target="_blank" rel="noreferrer" aria-label="GitHub">
+                            <i data-feather="github" class="w-6 h-6"></i>
+                        </a>
+                    </li>
+                    <li class="shrink-0 text-xs">
+                        <a class="block hover:text-slate-200 transition" href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                            <i data-feather="linkedin" class="w-6 h-6"></i>
+                        </a>
+                    </li>
+                    <li class="shrink-0 text-xs">
+                        <a class="block hover:text-slate-200 transition" href="mailto:purvangt2810@gmail.com" aria-label="Email">
+                            <i data-feather="mail" class="w-6 h-6"></i>
+                        </a>
+                    </li>
+                    <li class="shrink-0 text-xs ml-2">
+                        <a class="flex items-center gap-2 hover:text-teal-300 transition text-sm font-semibold border-b border-transparent hover:border-teal-300 pb-1" href="#" target="_blank" rel="noreferrer">
+                            <span>View Resume</span>
+                            <i data-feather="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </li>
                 </ul>
             </header>
 
-            <!-- RIGHT CONTENT -->
-            <main class="pt-24 lg:w-1/2 lg:py-24">
+            <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
                 
-                <!-- ABOUT -->
+                <!-- About Section -->
                 <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                    <p class="mb-4">I am a deeply technical engineer transitioning into the AI Product Management (AIPM) space. With a foundation built on architecting data pipelines and serving as a Technical Product Lead, I specialize in translating complex machine learning requirements into scalable, market-defining products.</p>
-                    <p class="mb-4">At <a href="https://www.visa.com/en-us" target="_blank" class="font-medium text-slate-200 hover:text-teal focus-visible:text-teal">Visa</a>, I managed technical delivery using strict 2-week Scrum sprints to architect AI fraud pipelines processing over <strong>3 Billion+ real-time transactions</strong>. Beyond building products, I build communities—serving as Chief Events Officer to facilitate tech-sharing meetups for engineering teams, and directing 500-person cross-functional tech fests.</p>
-                    <p>I am actively seeking PM and AIPM opportunities where I can leverage my Certified Scrum Product Owner (CSPO) credential and hardcore data-engineering lens to drive 0-to-1 product strategy.</p>
+                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
+                    </div>
+                    <div>
+                        <p class="mb-4">
+                            I am a boundary-spanner who bridges the gap between hardcore data engineering and strategic AI product management. With an MS in Computer Science and an active <span class="font-medium text-slate-200">Certified Scrum Product Owner (CSPO)</span> credential, I specialize in translating complex machine learning capabilities into intuitive, scalable products.
+                        </p>
+                        <p class="mb-4">
+                            Most recently at <a href="https://www.visa.com/en-us" target="_blank" class="font-medium text-teal-300 hover:underline">Visa</a>, I spearheaded the technical product execution for global fraud pipelines, translating complex ML requirements into scalable systems processing over <span class="font-medium text-slate-200">3Billion+ real-time transactions</span> via rigorous 2-week Scrum sprints.
+                        </p>
+                        <p>
+                            Beyond the code, I am a dedicated community builder. As Chief Events Officer for my management committee, I facilitated monthly tech-sharing meetups for 25+ engineers, mirroring my past experience directing the 500-attendee Cognizance Tech Fest. I am actively pursuing opportunities in the <span class="font-medium text-teal-300">PM and AI Product Management space</span> where I can leverage my deep technical infrastructure background to build market-defining AI products.
+                        </p>
+                    </div>
                 </section>
 
-                <!-- EXPERIENCE -->
                 <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Experience</h2>
+                    </div>
                     <ol class="group/list">
+                        
                         <!-- Visa -->
                         <li class="mb-12">
-                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2022 — Present</header>
+                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 rounded-xl -m-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]">
+                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                                    Jun 2022 — Dec 2024
+                                </header>
                                 <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200 group-hover:text-teal">Senior Data Engineer / Technical Product Lead · Visa Inc.</h3>
-                                    <p class="mt-2 text-sm leading-normal">Led 0-to-1 Product Strategy for the Latin America rollout of Visa Protect for A2A payments. Translated complex ML requirements into a scalable fraud pipeline processing 3 Billion+ real-time transactions. Organized monthly tech-sharing meetups for 25+ engineers as Chief Events Officer utilizing 2-week Scrum sprints.</p>
-                                    <ul class="mt-2 flex flex-wrap"><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Agile/Scrum</div></li><li class="mr-1.5 mt-2"><div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Data Pipelines</div></li></ul>
+                                    <h3 class="font-medium leading-snug text-slate-200">
+                                        <div>
+                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://www.visa.com/en-us" target="_blank" rel="noreferrer">
+                                                <span>Senior Data Engineer / Tech Product Lead · <span class="inline-block">Visa Inc.<i data-feather="arrow-up-right" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 ml-1"></i></span></span>
+                                            </a>
+                                        </div>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        Spearheaded 0-to-1 technical product execution for the LATAM rollout of Visa Protect for A2A payments, translating ML requirements into a scalable fraud pipeline processing <span class="text-slate-200 font-medium">3Billion+ real-time txns</span> (securing a $20B/5yr contract) via strict 2-week Scrum sprints. Led the Pay.UK AI fraud pilot identifying 54% of undetected fraud rings (£330M/yr savings). Owned internal 3D Network UI & EDA dashboards empowering data scientists to uncover 30+ novel schemes. Served as Chief Events Officer, facilitating monthly tech-sharing meetups for 25+ engineers and managing executive SVP site visits.
+                                    </p>
+                                    <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Agile (Scrum)</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">0-to-1 Delivery</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Apache Spark</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Kafka</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Snowflake</li>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
+
                         <!-- BISAG -->
                         <li class="mb-12">
-                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
-                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">2019</header>
+                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 rounded-xl -m-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]">
+                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                                    Jan 2019 — Apr 2019
+                                </header>
                                 <div class="z-10 sm:col-span-6">
-                                    <h3 class="font-medium leading-snug text-slate-200 group-hover:text-teal"><a href="https://bisag-n.gov.in/" target="_blank">Data Science Research Intern · BISAG</a></h3>
-                                    <p class="mt-2 text-sm leading-normal">Developed a 0-to-1 prototype for a Self-Driving Car. Implemented Object Classification and Edge Detection using Arduino and Raspberry Pi.</p>
+                                    <h3 class="font-medium leading-snug text-slate-200">
+                                        <div>
+                                            <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://bisag-n.gov.in/" target="_blank" rel="noreferrer">
+                                                <span>Data Science Research Intern · <span class="inline-block">BISAG<i data-feather="arrow-up-right" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 ml-1"></i></span></span>
+                                            </a>
+                                        </div>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        Developed a 0-to-1 prototype for a Self-Driving Car; implemented Object Classification and Edge Detection mapping utilizing Arduino and Raspberry Pi infrastructure.
+                                    </p>
+                                    <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Python</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Raspberry Pi</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Computer Vision</li>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
                     </ol>
                 </section>
 
-                <!-- PROJECTS -->
                 <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Projects</h2>
+                    </div>
                     <ul class="group/list">
+                        
                         <!-- Phool AI -->
                         <li class="mb-12">
-                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
-                                <div class="sm:col-span-2 opacity-70">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 rounded-xl -m-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]">
+                                <div class="z-10 sm:col-span-2 sm:order-1 order-2 mt-2 sm:mt-0 opacity-70 group-hover:opacity-100 transition-opacity">
+                                    <!-- Phool AI Icon Block -->
+                                    <div class="rounded border-2 border-slate-700/50 bg-slate-800/50 flex items-center justify-center w-full aspect-video transition group-hover:border-teal-300/30 sm:order-1 sm:col-span-2 sm:translate-y-1 shadow-inner relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-transparent"></div>
+                                        <i data-feather="sun" class="w-10 h-10 text-teal-300 relative z-10"></i>
+                                    </div>
                                 </div>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" target="_blank" class="font-medium leading-snug text-slate-200 group-hover:text-teal">Phool AI (Empathic Garden OS)</a></h3>
-                                    <p class="mt-2 text-sm leading-normal">Architected a weather-synced data pipeline leveraging RAG to deliver hyper-local botanical care. Defined roadmap integrating real-time utility with gamified retention loops.</p>
+                                <div class="z-10 sm:col-span-6 sm:order-2 order-1">
+                                    <h3 class="font-medium leading-snug text-slate-200">
+                                        <!-- UPDATED PHOOL AI LINK -->
+                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" target="_blank" rel="noreferrer">
+                                            <span>Phool AI: Empathic Garden OS<i data-feather="arrow-up-right" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 ml-1"></i></span>
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        Conceptualized a botanical OS by identifying market gaps in empathic AI; defined a roadmap integrating real-time utility with gamified retention loops. Architected a weather-synced data pipeline leveraging RAG to deliver hyper-local care and integrated Spotify APIs.
+                                    </p>
+                                    <ul class="mt-4 flex flex-wrap gap-2">
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">RAG Architecture</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Pinecone Vector DB</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Multimodal LLMs</li>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
+
                         <!-- Pantry Pulse -->
                         <li class="mb-12">
-                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 hover-card p-4 rounded-lg">
-                                <div class="sm:col-span-2 opacity-70">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" /></svg>
+                            <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 rounded-xl -m-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]">
+                                <div class="z-10 sm:col-span-2 sm:order-1 order-2 mt-2 sm:mt-0 opacity-70 group-hover:opacity-100 transition-opacity">
+                                    <!-- Pantry Pulse Icon Block -->
+                                    <div class="rounded border-2 border-slate-700/50 bg-slate-800/50 flex items-center justify-center w-full aspect-video transition group-hover:border-teal-300/30 sm:order-1 sm:col-span-2 sm:translate-y-1 shadow-inner relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-transparent"></div>
+                                        <i data-feather="database" class="w-10 h-10 text-teal-300 relative z-10"></i>
+                                    </div>
                                 </div>
-                                <div class="z-10 sm:col-span-6">
-                                    <h3><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" target="_blank" class="font-medium leading-snug text-slate-200 group-hover:text-teal">Pantry Pulse (Zero-Spend Inventory)</a></h3>
-                                    <p class="mt-2 text-sm leading-normal">Spearheaded the 0-to-1 vision for an AI inventory app to solve 'Kitchen Paralysis'. Validated technical requirements for a Computer Vision and NLTK-driven ingestion pipeline.</p>
+                                <div class="z-10 sm:col-span-6 sm:order-2 order-1">
+                                    <h3 class="font-medium leading-snug text-slate-200">
+                                        <!-- UPDATED PANTRY PULSE LINK -->
+                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" target="_blank" rel="noreferrer">
+                                            <span>Pantry Pulse Inventory Engine<i data-feather="arrow-up-right" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 ml-1"></i></span>
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        Spearheaded 0-to-1 vision for an AI inventory app solving "Kitchen Paralysis". Architected a 3-phase release roadmap and validated technical requirements for a Computer Vision and NLTK-driven ingredient ingestion pipeline.
+                                    </p>
+                                    <ul class="mt-4 flex flex-wrap gap-2">
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Computer Vision</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">NLTK</li>
+                                        <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Python</li>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <div class="mt-12"><button onclick="document.getElementById('archive-modal').classList.add('active'); document.getElementById('main-content').classList.add('hidden'); window.scrollTo(0,0);" class="inline-flex items-center font-semibold leading-tight text-slate-200 group">View Full Project Archive <span class="ml-1 transition-transform group-hover:translate-x-2">→</span></button></div>
+
+                    <div class="mt-12">
+                        <button onclick="toggleView()" class="inline-flex items-center font-medium leading-tight text-slate-200 font-semibold text-slate-200 group transition hover:text-teal-300">
+                            <span>View Full Project Archive</span>
+                            <i data-feather="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2"></i>
+                        </button>
+                    </div>
                 </section>
 
-                <!-- BEYOND WORK & PUBLICATIONS -->
-                <section class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-                    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-6">Publications</h2>
-                    <ul class="text-sm text-slate-400 mb-12">
-                        <li class="mb-2"><strong class="text-slate-200">Arduino based Automatic Irrigation System using GSM (2018)</strong><br> IJRECE VOL. 6 ISSUE 4 | ISSN: 2393-9028 (PRINT) | ISSN: 2348-2281 (ONLINE)</li>
-                    </ul>
-
-                    <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 mb-6">Media & Communities</h2>
-                    <div class="grid grid-cols-2 gap-4 text-sm">
+                <section id="certifications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Certifications</h2>
+                    </div>
+                    <div class="space-y-8">
                         <div>
-                            <h3 class="text-slate-200 font-semibold mb-2">Organizations</h3>
-                            <ul class="text-slate-400 space-y-1">
-                                <li>Scrum Alliance</li><li>Agile Austin</li><li>ProductCampATX</li><li>Agile Alliance</li><li>Product School</li>
+                            <h3 class="text-slate-200 font-semibold mb-3">Product & Agile Leadership</h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="group flex items-start hover:text-teal-300 transition-colors">
+                                        <i data-feather="award" class="w-5 h-5 mr-3 text-teal-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Certified Scrum Product Owner (CSPO)</strong> <br> <span class="text-slate-400 text-sm">Scrum Alliance</span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="group flex items-start hover:text-teal-300 transition-colors">
+                                        <i data-feather="award" class="w-5 h-5 mr-3 text-teal-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Micro-Certifications: AI, Strategy, Analytics, Discovery</strong> <br> <span class="text-slate-400 text-sm">Product School</span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="group flex items-start hover:text-teal-300 transition-colors">
+                                        <i data-feather="award" class="w-5 h-5 mr-3 text-teal-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Product Management Job Simulation</strong> <br> <span class="text-slate-400 text-sm">Electronic Arts (EA) via Forage</span></span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-slate-200 font-semibold mb-2">Podcasts</h3>
-                            <ul class="text-slate-400 space-y-1">
-                                <li><a href="https://www.youtube.com/c/LennyPodcast" target="_blank" class="hover:text-teal">Lenny's Podcast</a></li>
-                                <li><a href="https://www.youtube.com/c/lexfridman" target="_blank" class="hover:text-teal">Lex Fridman</a></li>
-                                <li><a href="https://www.youtube.com/@MelissaPerri" target="_blank" class="hover:text-teal">Product Thinking</a></li>
-                            </ul>
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="text-slate-200 font-semibold mb-2">Books</h3>
-                            <ul class="text-slate-400 space-y-1">
-                                <li>Building AI-Powered Products</li>
-                                <li>The Lean Startup</li>
+                            <h3 class="text-slate-200 font-semibold mb-3">AI & Cloud Architecture</h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="group flex items-start hover:text-teal-300 transition-colors">
+                                        <i data-feather="cpu" class="w-5 h-5 mr-3 text-teal-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Certified Generative AI Professional (OCI '25)</strong> <br> <span class="text-slate-400 text-sm">Oracle</span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="group flex items-start hover:text-teal-300 transition-colors">
+                                        <i data-feather="cpu" class="w-5 h-5 mr-3 text-teal-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>One Million Prompters Initiative</strong> <br> <span class="text-slate-400 text-sm">Dubai Future Foundation</span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/purvang-thakore/" target="_blank" class="group flex items-start hover:text-teal-300 transition-colors">
+                                        <i data-feather="cpu" class="w-5 h-5 mr-3 text-teal-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Automation AI Accelerator: Autonomous Agent Simulation</strong> <br> <span class="text-slate-400 text-sm">Datacom via Forage</span></span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </section>
+
+                <section id="publications" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Publications</h2>
+                    </div>
+                    <ul class="group/list">
+                        <!-- Publication 1 -->
+                        <li class="mb-12">
+                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 rounded-xl -m-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]">
+                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                                    ISCEA • 2021
+                                </header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug text-slate-200">
+                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="https://www.semanticscholar.org/paper/RFID-Enabled-Smart-Bracelet-for-COVID-19-Jones-Hr/62644ed6007d0fd4f004b6c738ff65e294d4cece" target="_blank" rel="noreferrer">
+                                            <span>RFID-Enabled Smart Bracelet for COVID-19<i data-feather="arrow-up-right" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 ml-1"></i></span>
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        International Supply Chain Technology Journal, Volume(Issue). ISCEA. ISSN: 2380-1204.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Publication 2 -->
+                        <li class="mb-12">
+                            <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 rounded-xl -m-4 hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)]">
+                                <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
+                                    IJRECE • 2018
+                                </header>
+                                <div class="z-10 sm:col-span-6">
+                                    <h3 class="font-medium leading-snug text-slate-200">
+                                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base" href="http://nebula.wsimg.com/c8fe6a14ff432cd98d7cf9f152dc38d6?AccessKeyId=DFB1BA3CED7E7997D5B1&disposition=0&alloworigin=1" target="_blank" rel="noreferrer">
+                                            <span>Arduino based Automatic Irrigation System using GSM<i data-feather="arrow-up-right" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 ml-1"></i></span>
+                                        </a>
+                                    </h3>
+                                    <p class="mt-2 text-sm leading-normal">
+                                        IJRECE VOL. 6 ISSUE 4 (OCTOBER - DECEMBER 2018). ISSN: 2393-9028 (PRINT) | ISSN: 2348-2281 (ONLINE).
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="beyond-work" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+                    <div class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Beyond Work</h2>
+                    </div>
+                    
+                    <div class="space-y-10">
+                        <!-- Organizations -->
+                        <div>
+                            <h3 class="text-slate-200 text-md font-semibold mb-3 flex items-center"><i data-feather="users" class="mr-2 text-slate-400 w-4 h-4"></i> Organizations I'm Part Of</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">Scrum Alliance</span>
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">Agile Austin</span>
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">ProductCampATX</span>
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">Agile Alliance</span>
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">Product School</span>
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">ProductTank</span>
+                                <span class="rounded-full bg-slate-800/50 border border-slate-700 px-3 py-1 text-sm text-slate-300">OpenSourceForYou</span>
+                            </div>
+                        </div>
+
+                        <!-- Media -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-slate-200 text-md font-semibold mb-3 flex items-center"><i data-feather="book-open" class="mr-2 text-slate-400 w-4 h-4"></i> Reading & Writing</h3>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-start"><span class="text-teal-300 mr-2">📚</span> <span><strong>Reading:</strong> Tech, Strategy, and Product Management Newsletters.</span></li>
+                                    <li class="flex items-start"><span class="text-teal-300 mr-2">📖</span> <span><strong>Books:</strong> <em>Building AI-Powered Products: The Essential Guide to AI and GenAI Product Management</em>, <em>The Lean Startup</em>, and various Fiction/Non-Fiction.</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-slate-200 text-md font-semibold mb-3 flex items-center"><i data-feather="headphones" class="mr-2 text-slate-400 w-4 h-4"></i> Podcast Listening</h3>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li>🎙️ <a href="https://www.youtube.com/@lennyspodcast" target="_blank" class="hover:text-teal-300 transition-colors border-b border-transparent hover:border-teal-300/30">Lenny's Podcast (Great for real-world PM thinking)</a></li>
+                                    <li>🎙️ <a href="https://www.youtube.com/@lexfridman" target="_blank" class="hover:text-teal-300 transition-colors border-b border-transparent hover:border-teal-300/30">Lex Fridman Podcast</a></li>
+                                    <li>🎙️ <a href="https://www.youtube.com/@MelissaPerri" target="_blank" class="hover:text-teal-300 transition-colors border-b border-transparent hover:border-teal-300/30">Product Thinking with Melissa Perri</a></li>
+                                    <li>🎙️ Founder Stories & Tech Startups</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Interests -->
+                        <div>
+                            <h3 class="text-slate-200 text-md font-semibold mb-3 flex items-center"><i data-feather="heart" class="mr-2 text-slate-400 w-4 h-4"></i> Interests & Persona</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                Music • Sports (Cricket, Badminton, Volleyball, Pickleball) • Investor • Reader • Hustler • Listener • Psychologist • Motivational Speaker • AI Evangelist
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
+                    <p>Designed taking inspiration from Brittany Chiang's layout. Built with <a href="https://tailwindcss.com/" class="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300" target="_blank" rel="noreferrer">Tailwind CSS</a>, deployed on <a href="https://pages.github.com/" class="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300" target="_blank" rel="noreferrer">GitHub Pages</a>.</p>
+                </footer>
             </main>
         </div>
 
-        <!-- PROJECT ARCHIVE MODAL -->
-        <div id="archive-modal" class="pt-24 lg:py-24 max-w-5xl mx-auto min-h-screen">
-            <button onclick="document.getElementById('archive-modal').classList.remove('active'); document.getElementById('main-content').classList.remove('hidden');" class="inline-flex items-center font-semibold leading-tight text-teal mb-8 group"><span class="mr-2 transition-transform group-hover:-translate-x-2">←</span> Purvang Thakore</button>
+        <div id="archive-view" class="view-section hidden-view flex-col py-12 lg:py-24 max-w-5xl mx-auto">
+            <button onclick="toggleView()" class="group mb-8 inline-flex items-center font-semibold leading-tight text-teal-300">
+                <i data-feather="arrow-left" class="mr-2 w-4 h-4 transition-transform group-hover:-translate-x-2"></i>
+                Purvang Thakore
+            </button>
             <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl mb-12">All Projects</h1>
-            <table class="w-full text-left border-collapse text-sm">
-                <thead class="sticky top-0 z-10 border-b border-slate-700/50 bg-slate-900/75 px-6 py-5 backdrop-blur">
-                    <tr><th class="py-4 pr-8 font-semibold text-slate-200">Year</th><th class="py-4 pr-8 font-semibold text-slate-200">Project</th><th class="py-4 pr-8 font-semibold text-slate-200">Made at</th><th class="py-4 pr-8 font-semibold text-slate-200 hidden lg:table-cell">Built with</th></tr>
+
+            <table class="w-full border-collapse text-left">
+                <thead class="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 px-6 py-5 backdrop-blur">
+                    <tr>
+                        <th class="py-4 pr-8 text-sm font-semibold text-slate-200">Year</th>
+                        <th class="py-4 pr-8 text-sm font-semibold text-slate-200">Project</th>
+                        <th class="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">Made at</th>
+                        <th class="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">Built with</th>
+                        <th class="py-4 pr-8 text-sm font-semibold text-slate-200 sm:table-cell">Link</th>
+                    </tr>
                 </thead>
-                <tbody class="align-top text-slate-400">
-                    <tr class="border-b border-slate-800"><td class="py-4 pr-4">2026</td><td class="py-4 pr-4 font-semibold text-slate-200"><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" target="_blank" class="hover:text-teal">Phool AI</a></td><td class="py-4 pr-4">Independent Project</td><td class="py-4 pr-4 hidden lg:table-cell">RAG, Vector DB, LLMs</td></tr>
-                    <tr class="border-b border-slate-800"><td class="py-4 pr-4">2026</td><td class="py-4 pr-4 font-semibold text-slate-200"><a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" target="_blank" class="hover:text-teal">Pantry Pulse</a></td><td class="py-4 pr-4">Independent Project</td><td class="py-4 pr-4 hidden lg:table-cell">CV, NLTK, Python</td></tr>
-                    <tr class="border-b border-slate-800"><td class="py-4 pr-4">2021</td><td class="py-4 pr-4 font-semibold text-slate-200">Adult Income EDA</td><td class="py-4 pr-4">Kaggle</td><td class="py-4 pr-4 hidden lg:table-cell">Pandas, Scikit-Learn</td></tr>
+                <tbody>
+                    <tr class="archive-row border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                        <td class="py-4 pr-4 align-top text-slate-500 text-sm">2026</td>
+                        <!-- UPDATED PHOOL AI ARCHIVE TITLE LINK -->
+                        <td class="py-4 pr-4 align-top font-medium leading-snug text-slate-200">
+                            <a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" class="hover:text-teal-300 focus-visible:text-teal-300 transition-colors" target="_blank" rel="noreferrer">Phool AI: Empathic Garden OS</a>
+                        </td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell text-slate-500 text-sm">Independent Project</td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell">
+                            <ul class="flex -translate-y-1.5 flex-wrap gap-2">
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">RAG</li>
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Pinecone DB</li>
+                            </ul>
+                        </td>
+                        <td class="py-4 pr-4 align-top sm:table-cell">
+                            <!-- UPDATED PHOOL AI ARCHIVE GITHUB LINK -->
+                            <a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/Phool-AI-PRD.md" class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">GitHub <i data-feather="external-link" class="ml-1 w-3 h-3"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="archive-row border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                        <td class="py-4 pr-4 align-top text-slate-500 text-sm">2026</td>
+                        <!-- UPDATED PANTRY PULSE ARCHIVE TITLE LINK -->
+                        <td class="py-4 pr-4 align-top font-medium leading-snug text-slate-200">
+                            <a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" class="hover:text-teal-300 focus-visible:text-teal-300 transition-colors" target="_blank" rel="noreferrer">Pantry Pulse Engine</a>
+                        </td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell text-slate-500 text-sm">Independent Project</td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell">
+                            <ul class="flex -translate-y-1.5 flex-wrap gap-2">
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">CV</li>
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">NLTK</li>
+                            </ul>
+                        </td>
+                        <td class="py-4 pr-4 align-top sm:table-cell">
+                            <!-- UPDATED PANTRY PULSE ARCHIVE GITHUB LINK -->
+                            <a href="https://github.com/purvangt2810/Product-Portfolio/blob/main/PantryPulse-PRD.md" class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">GitHub <i data-feather="external-link" class="ml-1 w-3 h-3"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="archive-row border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                        <td class="py-4 pr-4 align-top text-slate-500 text-sm">2021</td>
+                        <td class="py-4 pr-4 align-top font-medium leading-snug text-slate-200">
+                            Adult Income EDA
+                        </td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell text-slate-500 text-sm">Kaggle</td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell">
+                            <ul class="flex -translate-y-1.5 flex-wrap gap-2">
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Pandas</li>
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Sklearn</li>
+                            </ul>
+                        </td>
+                        <td class="py-4 pr-4 align-top sm:table-cell">
+                            <a href="#" class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">Kaggle <i data-feather="external-link" class="ml-1 w-3 h-3"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="archive-row border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                        <td class="py-4 pr-4 align-top text-slate-500 text-sm">2021</td>
+                        <td class="py-4 pr-4 align-top font-medium leading-snug text-slate-200">
+                            COVID-19 Sentiment Analysis
+                        </td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell text-slate-500 text-sm">Academic</td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell">
+                            <ul class="flex -translate-y-1.5 flex-wrap gap-2">
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Python</li>
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">TextBlob</li>
+                            </ul>
+                        </td>
+                        <td class="py-4 pr-4 align-top sm:table-cell">
+                            <a href="#" class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">GitHub <i data-feather="external-link" class="ml-1 w-3 h-3"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="archive-row border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                        <td class="py-4 pr-4 align-top text-slate-500 text-sm">2020</td>
+                        <td class="py-4 pr-4 align-top font-medium leading-snug text-slate-200">
+                            Volunteer Management System
+                        </td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell text-slate-500 text-sm">Academic</td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell">
+                            <ul class="flex -translate-y-1.5 flex-wrap gap-2">
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">PHP/Laravel</li>
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">MySQL</li>
+                            </ul>
+                        </td>
+                        <td class="py-4 pr-4 align-top sm:table-cell">
+                            <a href="#" class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">GitHub <i data-feather="external-link" class="ml-1 w-3 h-3"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="archive-row border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+                        <td class="py-4 pr-4 align-top text-slate-500 text-sm">2019</td>
+                        <td class="py-4 pr-4 align-top font-medium leading-snug text-slate-200">
+                            Autonomous R.C. Car
+                        </td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell text-slate-500 text-sm">BISAG / Academic</td>
+                        <td class="hidden py-4 pr-4 align-top lg:table-cell">
+                            <ul class="flex -translate-y-1.5 flex-wrap gap-2">
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">Keras</li>
+                                <li class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">OpenCV</li>
+                            </ul>
+                        </td>
+                        <td class="py-4 pr-4 align-top sm:table-cell">
+                            <a href="#" class="inline-flex items-center text-sm font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">GitHub <i data-feather="external-link" class="ml-1 w-3 h-3"></i></a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
     <script>
-        document.body.onmousemove = e => { document.documentElement.style.setProperty('--x', e.clientX + 'px'); document.documentElement.style.setProperty('--y', e.clientY + 'px'); }
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mouse Spotlight Effect
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', e => {
+            const x = e.clientX;
+            const y = e.clientY;
+            spotlight.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(45, 212, 191, 0.08), transparent 80%)`;
+        });
+
+        // View Toggling logic (Main vs Archive)
+        function toggleView() {
+            const mainView = document.getElementById('main-view');
+            const archiveView = document.getElementById('archive-view');
+            
+            if (mainView.classList.contains('visible-view')) {
+                mainView.classList.replace('visible-view', 'hidden-view');
+                archiveView.classList.replace('hidden-view', 'visible-view');
+                window.scrollTo(0, 0);
+            } else {
+                archiveView.classList.replace('visible-view', 'hidden-view');
+                mainView.classList.replace('hidden-view', 'visible-view');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // ScrollSpy logic for navigation highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            // Only run scrollspy if main view is visible
+            if(document.getElementById('main-view').classList.contains('hidden-view')) return;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
     </script>
 </body>
 </html>
